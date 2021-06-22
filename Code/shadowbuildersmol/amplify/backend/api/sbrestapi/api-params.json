@@ -1,0 +1,69 @@
+{
+    "paths": [
+        {
+            "name": "/alerts",
+            "lambdaFunction": "lambdafetchalerts",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/alerts"
+        },
+        {
+            "name": "/schedules",
+            "lambdaFunction": "lambdafetchschedules",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/schedules"
+        }
+    ],
+    "resourceName": "sbrestapi",
+    "apiName": "sbrestapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "lambdafetchalerts"
+        },
+        {
+            "lambdaFunction": "lambdafetchschedules"
+        }
+    ],
+    "privacy": {
+        "auth": 2,
+        "unauth": 0,
+        "authRoleName": "<StackName>-authRole",
+        "unAuthRoleName": "<StackName>-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "lambdafetchalerts",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "lambdafetchschedules",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "<uuid>"
+}

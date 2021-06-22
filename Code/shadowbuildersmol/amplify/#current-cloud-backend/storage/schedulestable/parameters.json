@@ -1,0 +1,5 @@
+{
+    "tableName": "schedulestable",
+    "partitionKeyName": "id",
+    "partitionKeyType": "S"
+}

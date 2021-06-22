@@ -1,0 +1,30 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "<StackName>-authRole",
+      "UnauthRoleArn": "arn:aws:iam::<account id>:role/<StackName>-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::<account id>:role/<StackName>-authRole",
+      "Region": "",
+      "DeploymentBucketName": "<StackName>-deployment",
+      "UnauthRoleName": "<StackName>-unauthRole",
+      "StackName": "<StackName>",
+      "StackId": "arn:aws:cloudformation:<region>:<account id>:stack/<StackName>/ecdc8b40-b8b5-11eb-82a5-12fe2bcce8a7",
+      "AmplifyAppId": "<unique app id>"
+    },
+    "categories": {
+      "auth": {
+        "cognito5bfc234c": {}
+      },
+      "function": {
+        "lambdafetchalerts": {
+          "deploymentBucketName": "<StackName>-deployment",
+          "s3Key": "amplify-builds/lambdafetchalerts-<key value>-build.zip"
+        },
+        "lambdafetchschedules": {
+          "deploymentBucketName": "<StackName>-deployment",
+          "s3Key": "amplify-builds/lambdafetchschedules-<key value>-build.zip"
+        }
+      }
+    }
+  }
+}

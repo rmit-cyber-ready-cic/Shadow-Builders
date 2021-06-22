@@ -1,0 +1,89 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.shadowbuildersmol"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="29" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/debug/AndroidManifest.xml:5:5-77
+11-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/debug/AndroidManifest.xml:5:22-75
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:4:5-67
+12-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:4:22-64
+13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+13-->[com.facebook.flipper:flipper:0.75.1] /Users/kashishkohli/.gradle/caches/transforms-2/files-2.1/a8f6015f96666ab8d93bfe5b64998bc8/jetified-flipper-0.75.1/AndroidManifest.xml:16:5-76
+13-->[com.facebook.flipper:flipper:0.75.1] /Users/kashishkohli/.gradle/caches/transforms-2/files-2.1/a8f6015f96666ab8d93bfe5b64998bc8/jetified-flipper-0.75.1/AndroidManifest.xml:16:22-73
+14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+14-->[:react-native-community_netinfo] /Users/kashishkohli/Documents/react-native/shadowbuildersmol/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-79
+14-->[:react-native-community_netinfo] /Users/kashishkohli/Documents/react-native/shadowbuildersmol/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:22-76
+15
+16    <application
+16-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:6:5-24:19
+17        android:name="com.shadowbuildersmol.MainApplication"
+17-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:7:7-38
+18        android:allowBackup="false"
+18-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:11:7-34
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.3.2] /Users/kashishkohli/.gradle/caches/transforms-2/files-2.1/f03ec885b8fabdebb4f0d3bbade5009e/core-1.3.2/AndroidManifest.xml:24:18-86
+20        android:debuggable="true"
+21        android:icon="@mipmap/ic_launcher"
+21-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:9:7-41
+22        android:label="@string/app_name"
+22-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:8:7-39
+23        android:roundIcon="@mipmap/ic_launcher_round"
+23-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:10:7-52
+24        android:theme="@style/AppTheme"
+24-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:12:7-38
+25        android:usesCleartextTraffic="true" >
+25-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/debug/AndroidManifest.xml:8:9-44
+26        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+26-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/debug/AndroidManifest.xml:11:9-86
+26-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/debug/AndroidManifest.xml:11:19-83
+27        <activity
+27-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:13:7-23:18
+28            android:name="com.shadowbuildersmol.MainActivity"
+28-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:14:9-37
+29            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+29-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:16:9-86
+30            android:label="@string/app_name"
+30-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:15:9-41
+31            android:launchMode="singleTask"
+31-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:17:9-40
+32            android:windowSoftInputMode="adjustResize" >
+32-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:18:9-51
+33            <intent-filter>
+33-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:19:11-22:29
+34                <action android:name="android.intent.action.MAIN" />
+34-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:20:17-69
+34-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:20:25-66
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:21:17-77
+36-->/Users/kashishkohli/Documents/react-native/shadowbuildersmol/android/app/src/main/AndroidManifest.xml:21:27-74
+37            </intent-filter>
+38        </activity>
+39
+40        <provider
+40-->[:react-native-webview] /Users/kashishkohli/Documents/react-native/shadowbuildersmol/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-20:20
+41            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
+41-->[:react-native-webview] /Users/kashishkohli/Documents/react-native/shadowbuildersmol/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-83
+42            android:authorities="com.shadowbuildersmol.fileprovider"
+42-->[:react-native-webview] /Users/kashishkohli/Documents/react-native/shadowbuildersmol/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-64
+43            android:exported="false"
+43-->[:react-native-webview] /Users/kashishkohli/Documents/react-native/shadowbuildersmol/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-37
+44            android:grantUriPermissions="true" >
+44-->[:react-native-webview] /Users/kashishkohli/Documents/react-native/shadowbuildersmol/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-47
+45            <meta-data
+45-->[:react-native-webview] /Users/kashishkohli/Documents/react-native/shadowbuildersmol/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-19:63
+46                android:name="android.support.FILE_PROVIDER_PATHS"
+46-->[:react-native-webview] /Users/kashishkohli/Documents/react-native/shadowbuildersmol/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-67
+47                android:resource="@xml/file_provider_paths" />
+47-->[:react-native-webview] /Users/kashishkohli/Documents/react-native/shadowbuildersmol/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-60
+48        </provider>
+49    </application>
+50
+51</manifest>

@@ -1,0 +1,190 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "<StackName>-authRole",
+      "UnauthRoleArn": "arn:aws:iam::<account ID>:role/<StackName>-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::<account ID>:role/<StackName>-authRole",
+      "Region": "<Region>",
+      "DeploymentBucketName": "<StackName>-deployment",
+      "UnauthRoleName": "<StackName>-unauthRole",
+      "StackName": "<StackName>",
+      "StackId": "arn:aws:cloudformation:<Region>:<account id>:stack/<StackName>/ecdc8b40-b8b5-11eb-82a5-12fe2bcce8a7",
+      "AmplifyAppId": "<App ID>",
+      "APIGatewayAuthURL": "<API gateway URL from s3 bucket>",
+      "AuthTriggerTemplateURL": ""
+    }
+  },
+  "storage": {
+    "alertstable": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "<S3 URL>",
+        "logicalId": "storagealertstable"
+      },
+      "lastPushTimeStamp": "2021-05-20T05:34:42.871Z",
+      "output": {
+        "PartitionKeyName": "message",
+        "Region": "<Region>",
+        "Arn": "arn:aws:dynamodb:<Region>:<account id>:table/alertstable-dev",
+        "StreamArn": "arn:aws:dynamodb:<Region>:<account id>:table/alertstable-dev/stream/2021-05-19T15:29:49.023",
+        "PartitionKeyType": "S",
+        "Name": "alertstable-dev"
+      },
+      "lastPushDirHash": "<hash value>"
+    },
+    "schedulestable": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "<s3 url>",
+        "logicalId": "storageschedulestable"
+      },
+      "lastPushTimeStamp": "2021-05-20T05:34:42.882Z",
+      "output": {
+        "PartitionKeyName": "id",
+        "Region": "<Region>",
+        "Arn": "arn:aws:dynamodb:<Region>:<account id>:table/schedulestable-dev",
+        "StreamArn": "arn:aws:dynamodb:<Region>:<account id>:table/schedulestable-dev/stream/2021-05-20T05:31:44.961",
+        "PartitionKeyType": "S",
+        "Name": "schedulestable-dev"
+      },
+      "lastPushDirHash": "<hash value>"
+    }
+  },
+  "function": {
+    "lambdafetchalerts": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "alertstable",
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "attributeEnvMap": {
+            "Name": "TABLE_NAME",
+            "Arn": "TABLE_ARN"
+          }
+        }
+      ],
+      "lastBuildTimeStamp": "2021-05-19T15:28:13.167Z",
+      "lastPackageTimeStamp": "2021-05-19T15:28:16.786Z",
+      "distZipFilename": "lambdafetchalerts-<Key Value>-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "<StackName>-deployment",
+        "s3Key": "amplify-builds/lambdafetchalerts-<Key Value>-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "<s3 URL>",
+        "logicalId": "functionlambdafetchalerts"
+      },
+      "lastPushTimeStamp": "2021-05-20T05:34:42.875Z",
+      "output": {
+        "Region": "<Region>",
+        "Arn": "arn:aws:lambda:<Region>:<account id>:function:lambdafetchalerts-dev",
+        "Name": "lambdafetchalerts-dev",
+        "LambdaExecutionRole": "shadowbuildersmolLambdaRoleb1bed810-dev"
+      },
+      "lastPushDirHash": "<hash value>"
+    },
+    "lambdafetchschedules": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "schedulestable",
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "attributeEnvMap": {
+            "Name": "TABLE_NAME",
+            "Arn": "TABLE_ARN"
+          }
+        }
+      ],
+      "lastBuildTimeStamp": "2021-05-20T05:31:09.215Z",
+      "lastPackageTimeStamp": "2021-05-20T05:31:12.929Z",
+      "distZipFilename": "lambdafetchschedules-59516f353345594f3845-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "<StackName>-deployment",
+        "s3Key": "amplify-builds/lambdafetchschedules-<Key value>-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "<s3 URL>",
+        "logicalId": "functionlambdafetchschedules"
+      },
+      "lastPushTimeStamp": "2021-05-20T05:34:42.882Z",
+      "output": {
+        "Region": "<Region>",
+        "Arn": "arn:aws:lambda:<Region>:<account id>:function:lambdafetchschedules-dev",
+        "Name": "lambdafetchschedules-dev",
+        "LambdaExecutionRole": "shadowbuildersmolLambdaRole2f902b77-dev"
+      },
+      "lastPushDirHash": "<hash value>"
+    }
+  },
+  "auth": {
+    "cognito5bfc234c": {
+      "service": "Cognito",
+      "serviceType": "managed",
+      "providerPlugin": "awscloudformation",
+      "providerMetadata": {
+        "s3TemplateURL": "<s3 URL>",
+        "logicalId": "authcognito5bfc234c"
+      },
+      "lastPushTimeStamp": "2021-05-20T05:34:42.878Z",
+      "output": {
+        "UserPoolId": "<User Pool ID>",
+        "AppClientIDWeb": "Client web ID",
+        "AppClientID": "<App CLient ID>",
+        "IdentityPoolId": "<User Pool ID>",
+        "UserPoolArn": "arn:aws:cognito-idp:<Region>:<account id>:userpool/<region>_<id>",
+        "IdentityPoolName": "<User Pool Name>__dev",
+        "UserPoolName": "<User Pool Name>"
+      },
+      "lastPushDirHash": "<Hash Value>"
+    }
+  },
+  "api": {
+    "sbrestapi": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "lambdafetchalerts",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "lambdafetchschedules",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ],
+      "providerMetadata": {
+        "s3TemplateURL": "<s3 URL>",
+        "logicalId": "apisbrestapi"
+      },
+      "lastPushTimeStamp": "2021-05-20T05:34:42.882Z",
+      "output": {
+        "ApiName": "sbrestapi",
+        "RootUrl": "https://<--app id-->.execute-api.<Region>.amazonaws.com/dev",
+        "ApiId": "<App ID>"
+      },
+      "lastPushDirHash": "<hash value>"
+    }
+  }
+}

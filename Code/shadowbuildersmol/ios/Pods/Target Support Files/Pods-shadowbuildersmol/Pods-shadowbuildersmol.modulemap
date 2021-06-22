@@ -1,0 +1,6 @@
+module Pods_shadowbuildersmol {
+  umbrella header "Pods-shadowbuildersmol-umbrella.h"
+
+  export *
+  module * { export * }
+}

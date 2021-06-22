@@ -1,0 +1,6 @@
+module Pods_shadowbuildersmol_shadowbuildersmolTests {
+  umbrella header "Pods-shadowbuildersmol-shadowbuildersmolTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

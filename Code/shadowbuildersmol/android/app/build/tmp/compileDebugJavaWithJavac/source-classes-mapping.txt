@@ -1,0 +1,14 @@
+com/shadowbuildersmol/ReactNativeFlipper.java
+ com.shadowbuildersmol.ReactNativeFlipper
+ com.shadowbuildersmol.ReactNativeFlipper$1
+ com.shadowbuildersmol.ReactNativeFlipper$2
+ com.shadowbuildersmol.ReactNativeFlipper$2$1
+com/shadowbuildersmol/BuildConfig.java
+ com.shadowbuildersmol.BuildConfig
+com/shadowbuildersmol/MainApplication.java
+ com.shadowbuildersmol.MainApplication
+ com.shadowbuildersmol.MainApplication$1
+com/shadowbuildersmol/MainActivity.java
+ com.shadowbuildersmol.MainActivity
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList

@@ -1,0 +1,107 @@
+// The sumerian object can be used to access Sumerian engine
+// types.
+//
+/* global sumerian */
+
+// Called when play mode starts.
+//
+function setup(args, ctx) {
+}
+
+// Called on every physics update, after setup(). When used in a
+// ScriptAction, this function is called only while the state
+// containing the action is active.
+//
+// For the best performance, remove this function if it is not
+// used.
+//
+function fixedUpdate(args, ctx) {
+}
+
+// Called on every render frame, after setup(). When used in a
+// ScriptAction, this function is called only while the state
+// containing the action is active.
+//
+// For the best performance, remove this function if it is not
+// used.
+//
+function update(args, ctx) {
+}
+
+// Called after all script "update" methods in the scene has
+// been called. When used in a ScriptAction, this function is
+// called only while the state containing the action is active.
+//
+// For the best performance, remove this function if it is not
+// used.
+//
+function lateUpdate(args, ctx) {
+}
+
+// When used in a ScriptAction, called when a state is entered.
+// Use ctx.transitions.success() to trigger the On<State>Success transition
+// and ctx.transitions.failure() to trigger the On<State>Failure transition
+function enter(args, ctx) {
+	
+	let oidElement = document.getElementById('oidReturn');
+    let shapeElement = document.getElementById('shapeReturn');
+    let contElement = document.getElementById('contReturn');
+	
+	
+    
+
+     	//DDB returned vars
+    let returnOid;
+    let returnShape;
+    let returnCont;
+    
+	
+	let dynamodb = new AWS.DynamoDB(); // AWS DDB Object
+    let value = ctx.entity.getAttribute("ObjectID");  // Read Sumerian Entity attribute Key/Value 
+
+    params = {
+		ExpressionAttributeValues: {
+     	":v1": {
+			S: value // Value = Key/Value Attribute of type String in DDB
+		}
+     	},
+     	KeyConditionExpression: "ObjectID = :v1",
+     	TableName : "Asset-Information"
+     	};
+
+
+    dynamodb.query(params, function(err, data) { //use params to query the DDB table
+    if (err) {
+      	console.log("Error", err);
+    }else{
+		var item = data.Items;
+		returnOid = item[0].ObjectID.S;
+    	returnShape = item[0].Asset.S;
+    	returnCont = item[0].Room.S;
+     	
+		console.log("Error", item);
+     	oidElement.innerHTML = returnOid + "</p>";
+     	shapeElement.innerHTML = returnShape + "</p>";
+     	contElement.innerHTML = returnCont + "</p>";
+     	secondtable.innerHTML = "GetItem succeeded";
+	}
+     	});
+	
+
+	sumerian.SystemBus.emit('lighton1');
+    ctx.transitions.success();  //tell Sumerian to move forward
+}
+
+// When used in a ScriptAction, called when a state is exited.
+//
+function exit(args, ctx) {
+}
+
+// Called when play mode stops.
+//
+function cleanup(args, ctx) {
+}
+
+// Defines script parameters.
+//
+var parameters = [];
